@@ -1,0 +1,17 @@
+{
+    "version": "1.0",
+    "file_records": [
+        {
+            "source_url": "/nfsroot/Embodied_AI/Object_assets/Object_assets_v1/From_Jianyuan/container/storagebox_blue_001_T1/resource/img/20250825-114604.jpg",
+            "source_hash": "85763c957effe26cdff9d042502def95cfae4095",
+            "target_url": "./Object_assets/Object_assets_v1/From_Jianyuan/container/storagebox_blue_001_T1/resource/img/20250825-114604.jpg",
+            "target_hash": "a09d228b17eb1c2e782cf99624dd4fc61ac13a04"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/Object_assets/Object_assets_v1/From_Jianyuan/cup/paper_cup_001_T1/resource/img/ab675359fa4eed044e05aeed9db5c21f.png",
+            "source_hash": "6a75370b5c4cb337308954ca6aa2dbd05ff4fa92",
+            "target_url": "./Object_assets/Object_assets_v1/From_Jianyuan/cup/paper_cup_001_T1/resource/img/ab675359fa4eed044e05aeed9db5c21f.png",
+            "target_hash": "0b6890fe2d6939c364a255b7f89c58aecceef3ca"
+        }
+    ]
+}

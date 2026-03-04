@@ -1,0 +1,101 @@
+{
+    "version": "1.0",
+    "file_records": [
+        {
+            "source_url": "/nfsroot/Embodied_AI/robot/tiangong_2_0_EVT/tiangong2_0_EVT_with_6d_force_sensor_hand_v2/omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5/Isaac/Environments/Grid/Materials/Textures/WireframeBlur_basecolor.png",
+            "source_hash": "dab9a041535d569c849fb581dd7e9964cb8a3e37",
+            "target_url": "./omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5/Isaac/Environments/Grid/Materials/Textures/WireframeBlur_basecolor.png",
+            "target_hash": "4484dee16d59a9b8bac9b9bf1085ef269ec50cfb"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/robot/tiangong_2_0_EVT/tiangong2_0_EVT_with_6d_force_sensor_hand_v2/omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5/Isaac/Environments/Grid/Materials/Textures/WireframeBlur_blue.png",
+            "source_hash": "050b76865f376c3ee17913d6b1d28751558b5e58",
+            "target_url": "./omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5/Isaac/Environments/Grid/Materials/Textures/WireframeBlur_blue.png",
+            "target_hash": "6f6f3466c5c30c7931129dfe038f9b6cfb649b99"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/robot/tiangong_2_0_EVT/tiangong2_0_EVT_with_6d_force_sensor_hand_v2/omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5/Isaac/Environments/Grid/Materials/Textures/Wireframe_blue.png",
+            "source_hash": "2c9e2873cbdc6777d32c27d38c283b4169567098",
+            "target_url": "./omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5/Isaac/Environments/Grid/Materials/Textures/Wireframe_blue.png",
+            "target_hash": "d931ee871f2a13cf69b0b704cbf53fa1674dd47f"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/robot/tiangong_2_0_EVT/tiangong2_0_EVT_with_6d_force_sensor_hand_v2/tg_4/textures/tiangong_jpg.jpg",
+            "source_hash": "682566f317e685a166c1cc02d7bf4cfdcba5ea7a",
+            "target_url": "./tg_4/textures/tiangong_jpg.jpg",
+            "target_hash": "6483471a59c2bf591ca1564fdada79847aafa385"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/robot/tiangong_2_0_EVT/tiangong2_0_EVT_with_6d_force_sensor_hand_v2/omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Carpet/Carpet_Pattern_Squares_Multi.mdl",
+            "source_hash": "1bbcae531913081d511f7f01f436c05b1f6a1d20",
+            "target_url": "./omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Carpet/Carpet_Pattern_Squares_Multi.mdl",
+            "target_hash": "841bda63d3cbc09c75255878649c49ee6009b199"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/robot/tiangong_2_0_EVT/tiangong2_0_EVT_with_6d_force_sensor_hand_v2/omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Metals/Aluminum_Anodized_Black.mdl",
+            "source_hash": "d693430e631aeff33caac1ac5f4386dbd3c8bd0e",
+            "target_url": "./omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Metals/Aluminum_Anodized_Black.mdl",
+            "target_hash": "8e076b64f616c2ef063dcba0b61fa5bdd398f337"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/robot/tiangong_2_0_EVT/tiangong2_0_EVT_with_6d_force_sensor_hand_v2/omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Metals/Cast_Metal_Silver_Vein.mdl",
+            "source_hash": "05f9128a6a514124a560b23207881b0952e1f42d",
+            "target_url": "./omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Metals/Cast_Metal_Silver_Vein.mdl",
+            "target_hash": "0fa22d8499848f046bf82f177c59fa16b6a6fa24"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/robot/tiangong_2_0_EVT/tiangong2_0_EVT_with_6d_force_sensor_hand_v2/omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Carpet/Carpet_Pattern_Squares_Multi/Carpet_Pattern_Squares_Multi_BaseColor.png",
+            "source_hash": "cf052d7b3fd2a7b82ffeffd5b8cdcc22fc117acb",
+            "target_url": "./omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Carpet/Carpet_Pattern_Squares_Multi/Carpet_Pattern_Squares_Multi_BaseColor.png",
+            "target_hash": "76a5c0d9e2464671c58b96e9511940a6709a53d5"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/robot/tiangong_2_0_EVT/tiangong2_0_EVT_with_6d_force_sensor_hand_v2/omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Metals/Aluminum_Anodized/Aluminum_Anodized_BaseColor.png",
+            "source_hash": "4edcabe1aa5e7b5a47e002e2e65d8baeff151ab6",
+            "target_url": "./omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Metals/Aluminum_Anodized/Aluminum_Anodized_BaseColor.png",
+            "target_hash": "163d8002ad0c23d3c42a2a1b9dbf174e20425a05"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/robot/tiangong_2_0_EVT/tiangong2_0_EVT_with_6d_force_sensor_hand_v2/omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Metals/Cast_Metal_Silver_Vein/Cast_Metal_Silver_Vein_BaseColor.png",
+            "source_hash": "a098e46bd582f6c6524d924cc6d00f496e32ecbc",
+            "target_url": "./omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Metals/Cast_Metal_Silver_Vein/Cast_Metal_Silver_Vein_BaseColor.png",
+            "target_hash": "58c7f7bf8627267bcbf6e428322890839d0c1db7"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/robot/tiangong_2_0_EVT/tiangong2_0_EVT_with_6d_force_sensor_hand_v2/omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Carpet/Carpet_Pattern_Squares_Multi/Carpet_Pattern_Squares_Multi_ORM.png",
+            "source_hash": "494d8009e4c0908f45ea552d8fd085bc6dbcb130",
+            "target_url": "./omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Carpet/Carpet_Pattern_Squares_Multi/Carpet_Pattern_Squares_Multi_ORM.png",
+            "target_hash": "0a5c180edabc8a201b9a60d49ca52181d8705bca"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/robot/tiangong_2_0_EVT/tiangong2_0_EVT_with_6d_force_sensor_hand_v2/omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Metals/Aluminum_Anodized/Aluminum_Anodized_ORM.png",
+            "source_hash": "0e97cb2e0171075498dc123ebe6982c9907f0685",
+            "target_url": "./omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Metals/Aluminum_Anodized/Aluminum_Anodized_ORM.png",
+            "target_hash": "354e5539ae35d2fe3402b7a1692f94622afc8cea"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/robot/tiangong_2_0_EVT/tiangong2_0_EVT_with_6d_force_sensor_hand_v2/omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Metals/Cast_Metal_Silver_Vein/Cast_Metal_Silver_Vein_ORM.png",
+            "source_hash": "c7fcc47329e9c84526e65a809fe16e1d9813a967",
+            "target_url": "./omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Metals/Cast_Metal_Silver_Vein/Cast_Metal_Silver_Vein_ORM.png",
+            "target_hash": "d5b292c0fbe41889221496c45a25579564cfec67"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/robot/tiangong_2_0_EVT/tiangong2_0_EVT_with_6d_force_sensor_hand_v2/omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Carpet/Carpet_Pattern_Squares_Multi/Carpet_Pattern_Squares_Multi_Normal.png",
+            "source_hash": "092d7e1f18b49ae317a239ab0ca887871d68012b",
+            "target_url": "./omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Carpet/Carpet_Pattern_Squares_Multi/Carpet_Pattern_Squares_Multi_Normal.png",
+            "target_hash": "7d019fd9d9331323e34d5aa96bb67418963e6e28"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/robot/tiangong_2_0_EVT/tiangong2_0_EVT_with_6d_force_sensor_hand_v2/omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Metals/Aluminum_Anodized/Aluminum_Anodized_Normal.png",
+            "source_hash": "c8b09877ef17e95f041fda4889a6cf69a102d5d5",
+            "target_url": "./omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Metals/Aluminum_Anodized/Aluminum_Anodized_Normal.png",
+            "target_hash": "bf7f42bece42909d1d8aa3985fd1686d7ab913f3"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/robot/tiangong_2_0_EVT/tiangong2_0_EVT_with_6d_force_sensor_hand_v2/omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Metals/Cast_Metal_Silver_Vein/Cast_Metal_Silver_Vein_N.png",
+            "source_hash": "01946d269f27f563c8ac55d73fe8c101d4e443e1",
+            "target_url": "./omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_1/Base/Metals/Cast_Metal_Silver_Vein/Cast_Metal_Silver_Vein_N.png",
+            "target_hash": "28e5ea0a901f21609cb3c4314abb06d6c1c5da54"
+        }
+    ]
+}

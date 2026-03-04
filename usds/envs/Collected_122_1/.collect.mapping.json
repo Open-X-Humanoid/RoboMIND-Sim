@@ -1,0 +1,29 @@
+{
+    "version": "1.0",
+    "file_records": [
+        {
+            "source_url": "/nfsroot/Embodied_AI/Object_assets/Nvidia/Pan/Pan_11/Textures/Pan_F_albedo.png",
+            "source_hash": "0483cba3f1eb1f74bf1879cee1e7b3f9a37e26c8",
+            "target_url": "./Object_assets/Nvidia/Pan/Pan_11/Textures/Pan_F_albedo.png",
+            "target_hash": "02c41b4dad5f0754c80376c175066b1eb795322f"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/Object_assets/Nvidia/Pan/Pan_11/Textures/Pan_F_metal.png",
+            "source_hash": "0bba15a384f06f73fae5768dcbbbae5fe36b34b2",
+            "target_url": "./Object_assets/Nvidia/Pan/Pan_11/Textures/Pan_F_metal.png",
+            "target_hash": "0ad44eacb327914d91a91b873b0305d268f332ce"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/Object_assets/Nvidia/Pan/Pan_11/Textures/Pan_F_normal.png",
+            "source_hash": "9c8407e9c3d0c30ba5538b883510257f821c99cc",
+            "target_url": "./Object_assets/Nvidia/Pan/Pan_11/Textures/Pan_F_normal.png",
+            "target_hash": "9a68c06bde3763e0a17e246e610137ab61496502"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/Object_assets/Nvidia/Pan/Pan_11/Textures/Pan_F_rough.png",
+            "source_hash": "faa13963fbb859bd47f12ca09ae63bac980b293f",
+            "target_url": "./Object_assets/Nvidia/Pan/Pan_11/Textures/Pan_F_rough.png",
+            "target_hash": "f71e1bfff541a583de74c8e92c9e0fd0bb41cdc8"
+        }
+    ]
+}

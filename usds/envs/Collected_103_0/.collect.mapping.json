@@ -1,0 +1,23 @@
+{
+    "version": "1.0",
+    "file_records": [
+        {
+            "source_url": "/nfsroot/Embodied_AI/Object_assets/Object_assets_v1/From_Jianyuan/container/pink_storagebox_001_T1/resource/img/246ad44e4e4eff840f5abd84b8945cab.png",
+            "source_hash": "9fe14f0c9eeb4eebe10c0c34094faeadcf2919c4",
+            "target_url": "./Object_assets/Object_assets_v1/From_Jianyuan/container/pink_storagebox_001_T1/resource/img/246ad44e4e4eff840f5abd84b8945cab.png",
+            "target_hash": "c220838250762ee2435075603919b2d2bc63e609"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/Object_assets/Object_assets_v1/From_Jianyuan/switch/redbutton_001_T1/resource/img/3fef927ac0d7a1ef1241157bfaf4161b.png",
+            "source_hash": "0b72114c7749bc1e68ff1d543c9fcadecf31d12a",
+            "target_url": "./Object_assets/Object_assets_v1/From_Jianyuan/switch/redbutton_001_T1/resource/img/3fef927ac0d7a1ef1241157bfaf4161b.png",
+            "target_hash": "56c0ab722075d117a0ead41c5cc3f8b1f252a59e"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/Object_assets/Object_assets_v1/From_Jianyuan/switch/redbutton_001_T1/resource/img/ab675359fa4eed044e05aeed9db5c21f.png",
+            "source_hash": "837fd208bd0434b24b6c8fd09c9979947116df70",
+            "target_url": "./Object_assets/Object_assets_v1/From_Jianyuan/switch/redbutton_001_T1/resource/img/ab675359fa4eed044e05aeed9db5c21f.png",
+            "target_hash": "a60502c79a57bb2eb42a45a6d4e4c3a13f7d2778"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+[environment]
+# usd_path = './usds/envs/Collected_121_1/121_1.usd'
+usd_path = './usds/envs/Collected_121_1'
+
+[robot]
+init_position = [-0.5, 0.0, 0.988]
+l_arm_home_pose = [-0.058291, -0.0000059663, -0.13505, -0.061063, 0.036503, 0.015332, -0.16273]
+r_arm_home_pose = [-0.9148, -1.4, 1.1, -1.6827, 0.0305, -0.6121, 0.2158]
+l_hand_home_pose =[1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+r_hand_home_pose =[1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+l_arm_init_pose = [0.0, 1.57, 0.0, 0.0, 0.0, 0.0, 0.0]
+r_arm_init_pose = [0.0, -1.57, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+[isaac_config]
+headless = false
+
+[task]
+description = "Right arm puts the paper cup into the basket"
+container_prim = "/generated_scene/grabable_items/Blue_storagebox_robomindv2_2"
+switch1_prim = "/generated_scene/grabable_items/Paper_cup_robomindv2_1"

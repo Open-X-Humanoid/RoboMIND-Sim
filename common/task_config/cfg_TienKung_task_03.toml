@@ -1,0 +1,21 @@
+[environment]
+# usd_path = './usds/envs/Collected_103_0/103_0.usd'
+usd_path = './usds/envs/Collected_103_0'
+
+[robot]
+init_position = [-0.5, 0.0, 0.988]
+l_arm_home_pose = [-0.7148, 1.0381, -0.8464, -1.1, 0.0305, -0.6121, -0.0]
+r_arm_home_pose = [-0.7148, -1.0381, 0.8464, -1.1, 0.0305, -0.6121, 0.0]
+l_hand_home_pose =[1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+r_hand_home_pose =[1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+l_arm_init_pose = [0.0, 1.57, 0.0, 0.0, 0.0, 0.0, 0.0]
+r_arm_init_pose = [0.0, -1.57, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+[isaac_config]
+headless = false
+
+[task]
+description = "Organize the desktop, use left and right robotic arms to put the industrial switch objects on the desktop into the basket"
+container_prim = "/generated_scene/grabable_items/Pink_storagebox_robomindv2_1"
+switch1_prim = "/generated_scene/grabable_items/Redbutton_robomindv2_2"
+switch2_prim = "/generated_scene/grabable_items/Redbutton_robomindv2_3"

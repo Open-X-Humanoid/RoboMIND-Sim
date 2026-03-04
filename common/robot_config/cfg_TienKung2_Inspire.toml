@@ -1,0 +1,73 @@
+[robot.config]
+usd_path = './usds/tiangong2_0/tiangong2_0_EVT_with_6d_force_sensor_hand_v3_pitch17.usd'
+namespace = '/TienKung'
+init_position = [0.0, 0.0, 0.0]
+init_orientation = [0.0, 0.0, 0.0]
+l_arm_home_pose = [-0.7148, 1.0381, -0.8464, -1.6827, 0.0305, -0.6121, -0.2158]
+r_arm_home_pose = [-0.7148, -1.0381, 0.8464, -1.6827, 0.0305, -0.6121, 0.2158]
+art_prim = "/humanoid/pelvis"
+arm_type = "dual"
+
+[robot.joint]
+num_arm_dof = 7
+num_leg_dof = 7
+l_arm_joint_name = [
+    "L_joint_0",
+    "L_joint_1",
+    "L_joint_2",
+    "L_joint_3",
+    "L_joint_4",
+    "L_joint_5",
+    "L_joint_6",
+]
+r_arm_joint_name = [
+    "R_joint_0",
+    "R_joint_1",
+    "R_joint_2",
+    "R_joint_3",
+    "R_joint_4",
+    "R_joint_5",
+    "R_joint_6",
+]
+ee_name = "inspire"
+l_ee_joint_name = [
+    "L_Joint_40",
+    "L_Joint_41",
+    "L_Joint_42",
+    "L_Joint_43",
+    "L_Joint_00",
+    "L_Joint_01",
+    "L_Joint_10",
+    "L_Joint_11",
+    "L_Joint_20",
+    "L_Joint_21",
+    "L_Joint_30",
+    "L_Joint_31",
+]
+r_ee_joint_name = [
+    "R_Joint_40",
+    "R_Joint_41",
+    "R_Joint_42",
+    "R_Joint_43",
+    "R_Joint_00",
+    "R_Joint_01",
+    "R_Joint_10",
+    "R_Joint_11",
+    "R_Joint_20",
+    "R_Joint_21",
+    "R_Joint_30",
+    "R_Joint_31",
+]
+
+[cam.camera_head]
+base_link = "/humanoid/head_roll_link/cam_head"
+frequency = 30
+position = [0.0831, 0.0, 0.07262]
+orientation = [0.976, 0.0, 0.216, 0.0]
+focal_length = 1.93
+camera_matrix = [[458.7488, 0.0, 323.3297],
+                 [0.0, 458.8663, 240.6295],
+                 [0.0, 0.0, 1.0]]     # gemini 335
+cam_resolution = [640,480]
+cam_type="Orbbec_Gemini336"
+

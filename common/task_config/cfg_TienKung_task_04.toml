@@ -1,0 +1,23 @@
+[environment]
+# usd_path = './usds/envs/Collected_115_0/115_0.usd'
+usd_path = './usds/envs/Collected_157_1_sim5.1'
+
+[robot]
+init_position = [-0.5, 0.0, 0.988]
+l_arm_home_pose = [0.3, 1.05, 0.02, -1.75, 0.15, -0.25, 0.15]  #-1.36
+r_arm_home_pose = [0.3, -1.05, 0.02, -1.75, -0.15, -0.25, -0.15]
+l_hand_home_pose =[1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+r_hand_home_pose =[1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+l_arm_init_pose = [0.0, 1.57, 0.0, 0.0, 0.0, 0.0, 0.0]
+r_arm_init_pose = [0.0, -1.57, 0.0, 0.0, 0.0,  0.0, 0.0]
+
+[isaac_config]
+headless = false
+
+[task]
+description = "Right arm pulls out the shelf, left arm puts the button on the shelf, right arm pushes the shelf back"
+container_prim = "/generated_scene/grabable_items/File_shelf_robomindv2_1"
+switch1_prim = "/generated_scene/grabable_items/Redbutton_robomindv2_2"
+joint1_prim = "/generated_scene/grabable_items/File_shelf_robomindv2_1/E_tray02_71/PrismaticJoint_Storage_box01_up1"
+joint2_prim = "/generated_scene/grabable_items/File_shelf_robomindv2_1/E_tray03_72/PrismaticJoint_Storage_box01_down"
+joint3_prim = "/generated_scene/grabable_items/File_shelf_robomindv2_1/E_tray04_73/PrismaticJoint_Storage_box01_down1"

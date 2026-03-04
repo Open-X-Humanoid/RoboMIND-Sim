@@ -1,0 +1,29 @@
+{
+    "version": "1.0",
+    "file_records": [
+        {
+            "source_url": "/nfsroot/Embodied_AI/Object_assets/Object_assets_v1/From_Jianyuan/file_shelf/file_shelf_01_T1/resource/img/73ecb122bf1bd59f21b0d82b76fada1c.png",
+            "source_hash": "df9305b0aa485725d737d1b75459b1c1bae407b3",
+            "target_url": "./Object_assets/Object_assets_v1/From_Jianyuan/file_shelf/file_shelf_01_T1/resource/img/73ecb122bf1bd59f21b0d82b76fada1c.png",
+            "target_hash": "198cd8fc4bd4a8c54a29d147e1a97e014126a573"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/Object_assets/Object_assets_v1/From_Jianyuan/file_shelf/file_shelf_01_T1/resource/img/ebeca3735fd69c802c885c1df6ab1590.png",
+            "source_hash": "5196388c1e895c937296b073fd290bb8a5418a04",
+            "target_url": "./Object_assets/Object_assets_v1/From_Jianyuan/file_shelf/file_shelf_01_T1/resource/img/ebeca3735fd69c802c885c1df6ab1590.png",
+            "target_hash": "c86f663f49695bfa65b006ad41d6c2cd400570cf"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/Object_assets/Object_assets_v1/From_Jianyuan/switch/redbutton_001_T1/resource/img/3fef927ac0d7a1ef1241157bfaf4161b.png",
+            "source_hash": "0b72114c7749bc1e68ff1d543c9fcadecf31d12a",
+            "target_url": "./Object_assets/Object_assets_v1/From_Jianyuan/switch/redbutton_001_T1/resource/img/3fef927ac0d7a1ef1241157bfaf4161b.png",
+            "target_hash": "559c58602f3d70b163900360bf8bda7ba2990e3b"
+        },
+        {
+            "source_url": "/nfsroot/Embodied_AI/Object_assets/Object_assets_v1/From_Jianyuan/switch/redbutton_001_T1/resource/img/ab675359fa4eed044e05aeed9db5c21f.png",
+            "source_hash": "837fd208bd0434b24b6c8fd09c9979947116df70",
+            "target_url": "./Object_assets/Object_assets_v1/From_Jianyuan/switch/redbutton_001_T1/resource/img/ab675359fa4eed044e05aeed9db5c21f.png",
+            "target_hash": "b631bf7caa5ef5fdb9ef1e36b27985dd2da18863"
+        }
+    ]
+}

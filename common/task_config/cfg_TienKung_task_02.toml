@@ -1,0 +1,20 @@
+[environment]
+# usd_path = './usds/envs/Collected_122_1/122_1.usd'
+usd_path = './usds/envs/Collected_122_1'
+
+[robot]
+init_position = [-0.5, 0.0, 0.988]
+l_arm_home_pose = [-0.7148, 1.0381, -0.8464, -1.6827, 0.0305, -0.6121, -0.2158]
+r_arm_home_pose = [0.059824, -0.0000040077, -0.078296, 0.049002, -0.26709, -0.069034, 0.20544]
+l_hand_home_pose =[1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+r_hand_home_pose =[1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+l_arm_init_pose = [0.0, 1.57, 0.0, 0.0, 0.0, 0.0, 0.0]
+r_arm_init_pose = [0.0, -1.57, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+[isaac_config]
+headless = false
+
+[task]
+description = "Rotate the pan handle, from 6 o'clock to 9 o'clock direction"
+pan_prim = "/generated_scene/grabable_items/Pan_base_4_1"
+offset_angle = 15

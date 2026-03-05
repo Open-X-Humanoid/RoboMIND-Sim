@@ -1,4 +1,8 @@
 # Benchmark Usage Instructions
+[![ModelScope](https://img.shields.io/badge/ModelScope-RoboMIND_2.0-blueviolet.svg)](https://modelscope.cn/datasets/X-Humanoid/RoboMIND2.0)
+[![arXiv](https://img.shields.io/badge/arXiv-2512.24653-b31b1b.svg)](https://arxiv.org/abs/2512.24653)
+
+For the RoboMIND 2.0 dataset, we provide an open-source, Isaac Sim-based simulation environment, complete with training data and standardized benchmark code. This empowers researchers to utilize these out-of-the-box resources for fast model evaluation and algorithm verification in a simulated setting.
   - This version is compatible with Isaac-Sim 5.1
 ## Installation
 1. **Install Isaac Sim 5.1**  

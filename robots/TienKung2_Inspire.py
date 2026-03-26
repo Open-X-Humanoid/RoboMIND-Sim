@@ -6,10 +6,10 @@ from robots.arm_base import ArmBase
 from robots.cam.sim_cam import SimCam
 from common.utils.transform_utils import StandaloneUtils
 # isaac sim
-from isaacsim.core.prims import Articulation
-from isaacsim.core.utils.types import ArticulationActions
 from isaacsim.core.prims import SingleXFormPrim
+from robots.arm_base import _dynamic_control
 import isaacsim.core.utils.rotations as rotations_utils
+# from isaacsim.simulation_app import SimulationApp
 from pxr import Gf, UsdPhysics
 from isaacsim.core.utils.stage import add_reference_to_stage
 from isaacsim.core.utils.prims import get_prim_at_path
@@ -86,27 +86,13 @@ class TienKung2_Inspire(ArmBase):
         logger.debug("camera_head")
 
     def active_art(self):
-        self.art = Articulation(self.NAMESPACE + config_loader.robot_config["robot"]["config"]["art_prim"])
-        if self.art.is_non_root_articulation_link == True:
-            logger.error("robot is not an articulation")
-        self.art.initialize()
-        self.left_arm_joint_handles = [
-            self.art.get_dof_index(name) for name in config_loader.robot_config["robot"]["joint"]["l_arm_joint_name"]
-        ]
-        self.right_arm_joint_handles = [
-            self.art.get_dof_index(name) for name in config_loader.robot_config["robot"]["joint"]["r_arm_joint_name"]
-        ]
-        self.left_ee_joint_handles = [
-            self.art.get_dof_index(name) for name in config_loader.robot_config["robot"]["joint"]["l_ee_joint_name"]
-        ]
-        self.right_ee_joint_handles = [
-            self.art.get_dof_index(name) for name in config_loader.robot_config["robot"]["joint"]["r_ee_joint_name"]
-        ]
-        #logger.debug(f"self.left_arm_joint_handles:{self.left_arm_joint_handles}")#[3, 8, 13, 18, 22, 26, 28]
-        #logger.debug(f"self.right_arm_joint_handles:{self.right_arm_joint_handles}")#[4, 9, 14, 19, 23, 27, 29]
-        #logger.debug(f"self.left_ee_joint_handles:{self.left_ee_joint_handles}")#[34, 44, 50, 52, 30, 40, 31, 41, 32, 42, 33, 43]
-        #logger.debug(f"self.right_ee_joint_handles:{self.right_ee_joint_handles}")#[38, 48, 51, 53, 35, 45, 39, 49, 36, 46, 37, 47]
-        logger.debug("joints activated")
+        super().active_art()
+        # Dex
+        for item in config_loader.robot_config["robot"]["joint"]["l_ee_joint_name"]:
+            self.left_ee_joint_handles.append(self.dc.find_articulation_dof(self.art, item))
+        for item in config_loader.robot_config["robot"]["joint"]["r_ee_joint_name"]:
+            self.right_ee_joint_handles.append(self.dc.find_articulation_dof(self.art, item))
+        logger.debug("extra joints activated")
 
     def update_command(self, command_dict):
         self.left_recv_arm_positions = command_dict["left_arm"]
@@ -139,7 +125,7 @@ class TienKung2_Inspire(ArmBase):
         }
 
     def pub_l_r_joints(self, curr_time):
-        positions = self.art.get_joint_positions().squeeze()
+        dof_states = self.dc.get_articulation_dof_states(self.art, _dynamic_control.STATE_ALL)
         return {
             "arm_left_position_raw": {
                 "timestamp":
@@ -147,8 +133,8 @@ class TienKung2_Inspire(ArmBase):
                 "is_intervene":
                     False,
                 "data": [
-                    positions[3], positions[8], positions[13], positions[18], positions[22], positions[26],
-                    positions[28]
+                    dof_states["pos"][3], dof_states["pos"][8], dof_states["pos"][13], dof_states["pos"][18],
+                    dof_states["pos"][22], dof_states["pos"][26], dof_states["pos"][28]
                 ]
             },
             "arm_right_position_raw": {
@@ -157,8 +143,8 @@ class TienKung2_Inspire(ArmBase):
                 "is_intervene":
                     False,
                 "data": [
-                    positions[4], positions[9], positions[14], positions[19], positions[23], positions[27],
-                    positions[29]
+                    dof_states["pos"][4], dof_states["pos"][9], dof_states["pos"][14], dof_states["pos"][19],
+                    dof_states["pos"][23], dof_states["pos"][27], dof_states["pos"][29]
                 ]
             },
             "end_effector_left_position_raw": {
@@ -167,18 +153,18 @@ class TienKung2_Inspire(ArmBase):
                 "is_intervene":
                     False,
                 "data": [
-                    positions[34],
-                    positions[44],
-                    positions[50],
-                    positions[52],
-                    positions[30],
-                    positions[40],
-                    positions[31],
-                    positions[41],
-                    positions[32],
-                    positions[42],
-                    positions[33],
-                    positions[43],
+                    dof_states["pos"][34],
+                    dof_states["pos"][44],
+                    dof_states["pos"][50],
+                    dof_states["pos"][52],
+                    dof_states["pos"][30],
+                    dof_states["pos"][40],
+                    dof_states["pos"][31],
+                    dof_states["pos"][41],
+                    dof_states["pos"][32],
+                    dof_states["pos"][42],
+                    dof_states["pos"][33],
+                    dof_states["pos"][43],
                 ]
             },
             "end_effector_right_position_raw": {
@@ -187,18 +173,18 @@ class TienKung2_Inspire(ArmBase):
                 "is_intervene":
                     False,
                 "data": [
-                    positions[38],
-                    positions[48],
-                    positions[51],
-                    positions[53],
-                    positions[35],
-                    positions[45],
-                    positions[39],
-                    positions[49],
-                    positions[36],
-                    positions[46],
-                    positions[37],
-                    positions[47],
+                    dof_states["pos"][38],
+                    dof_states["pos"][48],
+                    dof_states["pos"][51],
+                    dof_states["pos"][53],
+                    dof_states["pos"][35],
+                    dof_states["pos"][45],
+                    dof_states["pos"][39],
+                    dof_states["pos"][49],
+                    dof_states["pos"][36],
+                    dof_states["pos"][46],
+                    dof_states["pos"][37],
+                    dof_states["pos"][47],
                 ]
             },
             "end_effector_left_pose_raw": {
@@ -223,118 +209,84 @@ class TienKung2_Inspire(ArmBase):
 
     def joint_callback(self, step_size) -> None:
         # Arm control in base class
-        for idx in range(self.num_arm_dof):
-            self.art.apply_action(
-                ArticulationActions(joint_positions=self.left_recv_arm_positions[idx],
-                                    joint_indices=self.left_arm_joint_handles[idx]))
-            self.art.apply_action(
-                ArticulationActions(joint_positions=self.right_recv_arm_positions[idx],
-                                    joint_indices=self.right_arm_joint_handles[idx]))
+        super().joint_callback(step_size)
         # Dex
         # Right
         offset = 20.0
         # Thumb 40,41,42,43
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(-90.0), joint_indices=self.right_ee_joint_handles[0]))
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(5.0) + math.radians(80. - offset) *
-                                (1.0 - float(self.right_recv_ee_positions[-2])),
-                                joint_indices=self.right_ee_joint_handles[1]))
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(0.) - math.radians(10) *
-                                (1.0 - float(self.right_recv_ee_positions[-1])),
-                                joint_indices=self.right_ee_joint_handles[2]))
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(0.0), joint_indices=self.right_ee_joint_handles[3]))
+        self.dc.set_dof_position_target(self.right_ee_joint_handles[0], math.radians(-90.0))
+        self.dc.set_dof_position_target(
+            self.right_ee_joint_handles[1],
+            math.radians(5.0) + math.radians(80. - offset) * (1.0 - float(self.right_recv_ee_positions[-2])))
+        self.dc.set_dof_position_target(
+            self.right_ee_joint_handles[2],
+            math.radians(0.) - math.radians(10) * (1.0 - float(self.right_recv_ee_positions[-1])))
+        self.dc.set_dof_position_target(self.right_ee_joint_handles[3], math.radians(0.0))
         # Index 00,01
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(-5.0) + math.radians(-70.0 + offset) *
-                                (1.0 - float(self.right_recv_ee_positions[3])),
-                                joint_indices=self.right_ee_joint_handles[4]))
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(-10.0) + math.radians(-85.0 + offset) *
-                                (1.0 - float(self.right_recv_ee_positions[3])),
-                                joint_indices=self.right_ee_joint_handles[5]))
+        self.dc.set_dof_position_target(
+            self.right_ee_joint_handles[4],
+            math.radians(-5.0) + math.radians(-70.0 + offset) * (1.0 - float(self.right_recv_ee_positions[3])))
+        self.dc.set_dof_position_target(
+            self.right_ee_joint_handles[5],
+            math.radians(-10.0) + math.radians(-85.0 + offset) * (1.0 - float(self.right_recv_ee_positions[3])))
         # Middle 10,11
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(-5.0) + math.radians(-70.0 + offset) *
-                                (1.0 - float(self.right_recv_ee_positions[2])),
-                                joint_indices=self.right_ee_joint_handles[6]))
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(-10.0) + math.radians(-85.0 + offset) *
-                                (1.0 - float(self.right_recv_ee_positions[2])),
-                                joint_indices=self.right_ee_joint_handles[7]))
+        self.dc.set_dof_position_target(
+            self.right_ee_joint_handles[6],
+            math.radians(-5.0) + math.radians(-70.0 + offset) * (1.0 - float(self.right_recv_ee_positions[2])))
+        self.dc.set_dof_position_target(
+            self.right_ee_joint_handles[7],
+            math.radians(-10.0) + math.radians(-85.0 + offset) * (1.0 - float(self.right_recv_ee_positions[2])))
         # Ring 20,21
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(-5.0) + math.radians(-70.0 + offset) *
-                                (1.0 - float(self.right_recv_ee_positions[1])),
-                                joint_indices=self.right_ee_joint_handles[8]))
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(-10.0) + math.radians(-85.0 + offset) *
-                                (1.0 - float(self.right_recv_ee_positions[1])),
-                                joint_indices=self.right_ee_joint_handles[9]))
+        self.dc.set_dof_position_target(
+            self.right_ee_joint_handles[8],
+            math.radians(-5.0) + math.radians(-70.0 + offset) * (1.0 - float(self.right_recv_ee_positions[1])))
+        self.dc.set_dof_position_target(
+            self.right_ee_joint_handles[9],
+            math.radians(-10.0) + math.radians(-85.0 + offset) * (1.0 - float(self.right_recv_ee_positions[1])))
         # Little 30,31
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(-5.0) + math.radians(-70.0 + offset) *
-                                (1.0 - float(self.right_recv_ee_positions[0])),
-                                joint_indices=self.right_ee_joint_handles[10]))
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(-10.0) + math.radians(-85.0 + offset) *
-                                (1.0 - float(self.right_recv_ee_positions[0])),
-                                joint_indices=self.right_ee_joint_handles[11]))
+        self.dc.set_dof_position_target(
+            self.right_ee_joint_handles[10],
+            math.radians(-5.0) + math.radians(-70.0 + offset) * (1.0 - float(self.right_recv_ee_positions[0])))
+        self.dc.set_dof_position_target(
+            self.right_ee_joint_handles[11],
+            math.radians(-10.0) + math.radians(-85.0 + offset) * (1.0 - float(self.right_recv_ee_positions[0])))
 
         # Left
         offset = 20.0
         # Thumb 40,41,42,43
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(90.0), joint_indices=self.left_ee_joint_handles[0]))
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(-5.0) - math.radians(80. - offset) *
-                                (1.0 - float(self.left_recv_ee_positions[-2])),
-                                joint_indices=self.left_ee_joint_handles[1]))
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(0.) - math.radians(10) *
-                                (1.0 - float(self.left_recv_ee_positions[-1])),
-                                joint_indices=self.left_ee_joint_handles[2]))
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(0.0), joint_indices=self.left_ee_joint_handles[3]))
+        self.dc.set_dof_position_target(self.left_ee_joint_handles[0], math.radians(90.0))
+        self.dc.set_dof_position_target(
+            self.left_ee_joint_handles[1],
+            math.radians(-5.0) - math.radians(80. - offset) * (1.0 - float(self.left_recv_ee_positions[-2])))
+        self.dc.set_dof_position_target(
+            self.left_ee_joint_handles[2],
+            math.radians(0.) - math.radians(10) * (1.0 - float(self.left_recv_ee_positions[-1])))
+        self.dc.set_dof_position_target(self.left_ee_joint_handles[3], math.radians(0.0))
         # Index 00,01
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(-5.0) + math.radians(-70.0 + offset) *
-                                (1.0 - float(self.left_recv_ee_positions[3])),
-                                joint_indices=self.left_ee_joint_handles[4]))
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(-5.0) + math.radians(-70.0 + offset) *
-                                (1.0 - float(self.left_recv_ee_positions[3])),
-                                joint_indices=self.left_ee_joint_handles[5]))
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(-10.0) + math.radians(-85.0 + offset) *
-                                (1.0 - float(self.left_recv_ee_positions[3])),
-                                joint_indices=self.left_ee_joint_handles[5]))
+        self.dc.set_dof_position_target(
+            self.left_ee_joint_handles[4],
+            math.radians(-5.0) + math.radians(-70.0 + offset) * (1.0 - float(self.left_recv_ee_positions[3])))
+        self.dc.set_dof_position_target(
+            self.left_ee_joint_handles[5],
+            math.radians(-10.0) + math.radians(-85.0 + offset) * (1.0 - float(self.left_recv_ee_positions[3])))
         # Middle 10,11
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(-5.0) + math.radians(-70.0 + offset) *
-                                (1.0 - float(self.left_recv_ee_positions[2])),
-                                joint_indices=self.left_ee_joint_handles[6]))
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(-10.0) + math.radians(-85.0 + offset) *
-                                (1.0 - float(self.left_recv_ee_positions[2])),
-                                joint_indices=self.left_ee_joint_handles[7]))
+        self.dc.set_dof_position_target(
+            self.left_ee_joint_handles[6],
+            math.radians(-5.0) + math.radians(-70.0 + offset) * (1.0 - float(self.left_recv_ee_positions[2])))
+        self.dc.set_dof_position_target(
+            self.left_ee_joint_handles[7],
+            math.radians(-10.0) + math.radians(-85.0 + offset) * (1.0 - float(self.left_recv_ee_positions[2])))
         # Ring 20,21
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(-5.0) + math.radians(-70.0 + offset) *
-                                (1.0 - float(self.left_recv_ee_positions[1])),
-                                joint_indices=self.left_ee_joint_handles[8]))
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(-10.0) + math.radians(-85.0 + offset) *
-                                (1.0 - float(self.left_recv_ee_positions[1])),
-                                joint_indices=self.left_ee_joint_handles[9]))
+        self.dc.set_dof_position_target(
+            self.left_ee_joint_handles[8],
+            math.radians(-5.0) + math.radians(-70.0 + offset) * (1.0 - float(self.left_recv_ee_positions[1])))
+        self.dc.set_dof_position_target(
+            self.left_ee_joint_handles[9],
+            math.radians(-10.0) + math.radians(-85.0 + offset) * (1.0 - float(self.left_recv_ee_positions[1])))
         # Little 30,31
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(-5.0) + math.radians(-70.0 + offset) *
-                                (1.0 - float(self.left_recv_ee_positions[0])),
-                                joint_indices=self.left_ee_joint_handles[10]))
-        self.art.apply_action(
-            ArticulationActions(joint_positions=math.radians(-10.0) + math.radians(-85.0 + offset) *
-                                (1.0 - float(self.left_recv_ee_positions[0])),
-                                joint_indices=self.left_ee_joint_handles[11]))
+        self.dc.set_dof_position_target(
+            self.left_ee_joint_handles[10],
+            math.radians(-5.0) + math.radians(-70.0 + offset) * (1.0 - float(self.left_recv_ee_positions[0])))
+        self.dc.set_dof_position_target(
+            self.left_ee_joint_handles[11],
+            math.radians(-10.0) + math.radians(-85.0 + offset) * (1.0 - float(self.left_recv_ee_positions[0])))

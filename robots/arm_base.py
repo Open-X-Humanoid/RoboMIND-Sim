@@ -2,8 +2,7 @@
 from common.logger_loader import logger
 from common.config_loader import config_loader
 # isaac
-from isaacsim.core.prims import Articulation
-from isaacsim.core.utils.types import ArticulationActions
+from omni.isaac.dynamic_control import _dynamic_control
 # others
 import os
 import numpy as np
@@ -35,13 +34,29 @@ class ArmBase(object):
             self.right_arm_joint_handles = []
             self.right_recv_ee_positions = None  # only one joint in puppet
             self.right_ee_joint_handles = []
-        self.art = None  #type: Articulation
+        # Robot dynamic_control
+        self.dc = _dynamic_control.acquire_dynamic_control_interface()
 
     def change_pose(self, pos: np.ndarray, rot: np.ndarray, is_degrgripper: bool) -> None:
         raise NotImplementedError
 
     def active_art(self) -> None:
-        raise NotImplementedError
+        self.art = self.dc.get_articulation(self.NAMESPACE + config_loader.robot_config["robot"]["config"]["art_prim"])
+        if self.art == _dynamic_control.INVALID_HANDLE:
+            logger.error("robot is not an articulation")
+        self.dc.wake_up_articulation(self.art)
+        # Left arm
+        for item in config_loader.robot_config["robot"]["joint"]["l_arm_joint_name"]:
+            self.left_arm_joint_handles.append(self.dc.find_articulation_dof(self.art, item))
+        if self.arm_type == "dual":
+            # Right arm
+            for item in config_loader.robot_config["robot"]["joint"]["r_arm_joint_name"]:
+                self.right_arm_joint_handles.append(self.dc.find_articulation_dof(self.art, item))
+        logger.debug("arm activated")
 
     def joint_callback(self, step_size: int) -> None:
-        raise NotImplementedError
+        # Arm
+        for idx in range(self.num_arm_dof):
+            self.dc.set_dof_position_target(self.left_arm_joint_handles[idx], self.left_recv_arm_positions[idx])
+            if self.arm_type == "dual":
+                self.dc.set_dof_position_target(self.right_arm_joint_handles[idx], self.right_recv_arm_positions[idx])

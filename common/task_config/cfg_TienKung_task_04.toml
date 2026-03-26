@@ -1,6 +1,6 @@
 [environment]
 # usd_path = './usds/envs/Collected_115_0/115_0.usd'
-usd_path = './usds/envs/Collected_157_1_sim5.1'
+usd_path = './usds/envs/Collected_157_1_sim4.5'
 
 [robot]
 init_position = [-0.5, 0.0, 0.988]

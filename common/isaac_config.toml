@@ -1,4 +1,4 @@
 [isaac_sim]
 # Isaac Sim Python path configuration
-python_path = "YOUR_PATH/isaacsim_5.1/python.sh"
+python_path = "YOUR_PATH/isaacsim_4.5/python.sh"
 

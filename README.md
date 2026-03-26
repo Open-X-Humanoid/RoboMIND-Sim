@@ -23,12 +23,12 @@
    ```
 2. **Install required packages**  
     ```bash
-    ~/isaacsim_4.5/python.sh -m pip install -r benchmark/requirements.txt
+    ~/isaacsim_4.5/python.sh -m pip install -r RoboMIND-Sim/requirements.txt
     ```
 
 ## Configuration
 
-Edit `benchmark/common/isaac_config.toml` file:
+Edit `RoboMIND-Sim/common/isaac_config.toml` file:
 
 ```toml
 [isaac_sim]
@@ -38,10 +38,10 @@ python_path = "~/isaacsim_4.5/python.sh"
 
 ## How to Start
 ### Start Inference
-Run [benchmark/tools/policy_infer.py](./tools/policy_infer.py) first. 
+Run [RoboMIND-Sim/tools/policy_infer.py](./tools/policy_infer.py) first. 
 
 ```bash
-python3 benchmark/tools/policy_infer.py
+python3 RoboMIND-Sim/tools/policy_infer.py
 ```
   - The script only provides interfaces for interacting with the simulation, and model inference needs to be implemented by the user themselves !
 
@@ -51,13 +51,13 @@ Then run Isaac Sim
 #### Batch
 ```bash
 # TienKung task
-~/isaacsim_4.5/python.sh benchmark/benchmark.py --task TienKung_task_01 --loop 3 --timeout 300
+~/isaacsim_4.5/python.sh RoboMIND-Sim/benchmark.py --task TienKung_task_01 --loop 3 --timeout 300
 ```
 
 #### Single
 ```bash
 # TienKung task
-~/isaacsim_4.5/python.sh benchmark/tasks/run_task.py  --task TienKung_task_01 --usd ABSOLUTE_PATH_TO_USD_FILE
+~/isaacsim_4.5/python.sh RoboMIND-Sim/tasks/run_task.py  --task TienKung_task_01 --usd ABSOLUTE_PATH_TO_USD_FILE
 ```
 
 #### Arguments Description
@@ -76,7 +76,7 @@ Then run Isaac Sim
     | TienKung_task_04 |TienKung2.0| Right arm pulls out the shelf, left arm puts the button on the shelf, right arm pushes the shelf back |<div style="width:100px">[115-places_switch_on_shelf](https://modelscope.cn/datasets/X-Humanoid/RoboMIND2.0-Tienkung-sim/tree/master/data/tienkung_sim/115-right_arm_pulls_out_storage_shelf_and_left_arm_places_switch_on_shelf_and_right_arm_closes_shelf/success_episodes)<dev>|![444](pictures/115-right_arm_pulls_out_storage_shelf_and_left_arm_places_switch_on_shelf_and_right_arm_closes_shelf.png)|
 
 #### Note
-  - The currently open-sourced sim hdf5 data was collected in IsaacSim 4.5, and the sim data collected in IsaacSim 5.1 will be open-sourced in the future
-  - Simulation run logs and evaluation results paths: `benchmark/logs`
+  - The currently open-sourced sim hdf5 data was collected in IsaacSim 4.5, and the sim data collected in IsaacSim 5.1 will be open-sourced in the near future
+  - Simulation run logs and evaluation results paths: `RoboMIND-Sim/logs`
   - Each task provides 50 scenarios, and each time the simulation is initiated, one will be randomly selected
 

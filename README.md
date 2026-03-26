@@ -3,7 +3,7 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2512.24653-b31b1b.svg)](https://arxiv.org/abs/2512.24653)
 
 For the RoboMIND 2.0 dataset, we provide an open-source, Isaac Sim-based simulation environment, complete with training data and standardized benchmark code. This empowers researchers to utilize these out-of-the-box resources for fast model evaluation and algorithm verification in a simulated setting.
-  - The currently open-sourced data was collected in the 4.5 environment, so for better results, please use the [isaacsim-4.5](https://github.com/Open-X-Humanoid/RoboMIND-Sim/tree/isaacsim-4.5) branch code
+  - The currently open-sourced hdf5 data was collected in the isaacsim4.5 environment, so for better results, please use the [isaacsim-4.5](https://github.com/Open-X-Humanoid/RoboMIND-Sim/tree/isaacsim-4.5) branch code
 ## Installation
 1. **Install Isaac Sim 5.1**  
    - Official Documentation: [https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/download.html](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/download.html)

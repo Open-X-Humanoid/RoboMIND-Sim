@@ -72,7 +72,7 @@ Then run Isaac Sim
 
   - `--task` is the name of the evaluation task
 
-    | --task | Robot |<div style="width:200px">Task description</div>|Hdf5 links (collected in isaacsim4.5)| Example scenario | Our act test results |
+    | --task | Robot |<div style="width:180px">Task description</div>|Hdf5 links (collected in isaacsim4.5)| Example scenario | Our act test results |
     |:------:|:-----:|----------------|:----:|:----------------:|:--:|
     | TienKung_task_01 |TienKung2.0| Put the paper cup into the basket with right arm |<div style="width:100px">[121-right_arm_put_paper_cup_into_box](https://modelscope.cn/datasets/X-Humanoid/RoboMIND2.0-Tienkung-sim/tree/master/data/tienkung_sim/121-right_arm_put_paper_cup_into_box/success_episodes)</div>|![111](pictures/121-right_arm_put_paper_cup_into_box.png)| 62.2 |
     | TienKung_task_02 |TienKung2.0| Rotate the pan handle, from 6 o'clock to 9 o'clock direction |<div style="width:100px">[122-rotate_pot_handle](https://modelscope.cn/datasets/X-Humanoid/RoboMIND2.0-Tienkung-sim/tree/master/data/tienkung_sim/122-rotate_pot_handle/success_episodes)<dev>|![222](pictures/122-rotate_pot_handle.png)| 50.8 |

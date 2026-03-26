@@ -3,7 +3,7 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2512.24653-b31b1b.svg)](https://arxiv.org/abs/2512.24653)
 
 For the RoboMIND 2.0 dataset, we provide an open-source, Isaac Sim-based simulation environment, complete with training data and standardized benchmark code. This empowers researchers to utilize these out-of-the-box resources for fast model evaluation and algorithm verification in a simulated setting.
-  - This version is compatible with Isaac-Sim 5.1
+  - The currently open-sourced data was collected in the 4.5 environment, so for better results, please use the [isaacsim-4.5](https://github.com/Open-X-Humanoid/RoboMIND-Sim/tree/isaacsim-4.5) branch code
 ## Installation
 1. **Install Isaac Sim 5.1**  
    - Official Documentation: [https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/download.html](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/download.html)
@@ -72,7 +72,7 @@ Then run Isaac Sim
 
   - `--task` is the name of the evaluation task
 
-    | --task | Robot |<div style="width:200px">Task description</div>|Hdf5 links| Example scenario |
+    | --task | Robot |<div style="width:200px">Task description</div>|Hdf5 links (collected in isaacsim4.5)| Example scenario |
     |:------:|:-----:|----------------|:----:|:----------------:|
     | TienKung_task_01 |TienKung2.0| Put the paper cup into the basket with right arm |<div style="width:100px">[121-right_arm_put_paper_cup_into_box](https://modelscope.cn/datasets/X-Humanoid/RoboMIND2.0-Tienkung-sim/tree/master/data/tienkung_sim/121-right_arm_put_paper_cup_into_box/success_episodes)</div>|![111](pictures/121-right_arm_put_paper_cup_into_box.png)|
     | TienKung_task_02 |TienKung2.0| Rotate the pan handle, from 6 o'clock to 9 o'clock direction |<div style="width:100px">[122-rotate_pot_handle](https://modelscope.cn/datasets/X-Humanoid/RoboMIND2.0-Tienkung-sim/tree/master/data/tienkung_sim/122-rotate_pot_handle/success_episodes)<dev>|![222](pictures/122-rotate_pot_handle.png)|
@@ -80,6 +80,7 @@ Then run Isaac Sim
     | TienKung_task_04 |TienKung2.0| Right arm pulls out the shelf, left arm puts the button on the shelf, right arm pushes the shelf back |<div style="width:100px">[115-places_switch_on_shelf](https://modelscope.cn/datasets/X-Humanoid/RoboMIND2.0-Tienkung-sim/tree/master/data/tienkung_sim/115-right_arm_pulls_out_storage_shelf_and_left_arm_places_switch_on_shelf_and_right_arm_closes_shelf/success_episodes)<dev>|![444](pictures/115-right_arm_pulls_out_storage_shelf_and_left_arm_places_switch_on_shelf_and_right_arm_closes_shelf.png)|
 
 #### Note
+  - The currently open-sourced sim hdf5 data was collected in IsaacSim 4.5, and the sim data collected in IsaacSim 5.1 will be open-sourced in the near future
   - Simulation run logs and evaluation results paths: `RoboMIND-Sim/logs`
 
   - Each task provides 50 scenarios, and each time the simulation is initiated, one will be randomly selected
